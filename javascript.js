@@ -42,7 +42,16 @@ function playRound(humanChoice, computerChoice) {
   } 
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+//4. Play a complete game (5 rounds)
+function playGame() {
+  //Play five rounds
+  for (let i = 0; i < 5; i++) {
+    let humanSelection = getHumanChoice();
+    let computerSelection = getComputerChoice();
+    console.log(`Round ${i + 1}: ${playRound(humanSelection, computerSelection)}`)
+  }
+  //Present the final result
+  console.log(`Final Result -> Your score: ${humanScore} | Computer score: ${computerScore}`)
+}
 
-console.log(playRound(humanSelection, computerSelection));
+playGame();
